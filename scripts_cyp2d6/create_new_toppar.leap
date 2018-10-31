@@ -1,0 +1,20 @@
+source leaprc.ff14SB    
+
+loadoff heme.lib               
+
+loadamberparams heme.frcmod   
+
+loadamberparams frcmod.ionsjc_tip3p
+
+set default PBRadii mbondi3             #  igb: defines which implicit solvent model will be used. Value "5" uses a modified GB model. With this option, it is necessary to "set default PBradii mbondi2
+prot = loadPDB p450
+
+charge prot
+
+addions prot Na+ 0
+
+solvatebox prot TIP3PBOX 15.0
+
+saveAmberParm prot p450.parm7 p450.rst7
+quit
+
